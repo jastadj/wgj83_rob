@@ -6,7 +6,7 @@
 
 resource_name = "forward"
 length = 0.75
-loop = false
+loop = true
 step = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -21,13 +21,12 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[node name="Tread" type="Sprite" index="0"]
+[node name="Tread" type="Sprite"]
 
 texture = ExtResource( 1 )
 hframes = 3
-frame = 2
 region_rect = Rect2( 0, 0, 17, 60 )
-_sections_unfolded = [ "Animation", "Offset", "Region" ]
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 

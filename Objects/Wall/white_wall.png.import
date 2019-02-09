@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/robot_arm.png-56579bcd47db041d34f2b460609468ff.stex"
+path="res://.import/white_wall.png-f7adb9a0fb45517b6f98a88652577ea4.stex"
 
 [deps]
 
-source_file="res://Objects/Robot/robot_arm.png"
-dest_files=[ "res://.import/robot_arm.png-56579bcd47db041d34f2b460609468ff.stex" ]
+source_file="res://Objects/Wall/white_wall.png"
+dest_files=[ "res://.import/white_wall.png-f7adb9a0fb45517b6f98a88652577ea4.stex" ]
 
 [params]
 
