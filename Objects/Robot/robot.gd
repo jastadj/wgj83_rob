@@ -6,6 +6,7 @@ var acceleration = 150
 var deceleration = 0.80
 var rotation_speed = 3
 var velocity = Vector2(0,0)
+signal player_activate
 
 func _ready():
 	pass
@@ -32,7 +33,7 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.clamped(velocity.length()*deceleration)
 
-	print("drive_dir:" + str(drive_dir) + "  vel:" + str(velocity.length()))
+	#print("drive_dir:" + str(drive_dir) + "  vel:" + str(velocity.length()))
 	
 	# set tread speed and move robot in direction its rotated at its current speed
 	$LeftTread.current_speed = velocity.length() * drive_dir
@@ -41,4 +42,7 @@ func _physics_process(delta):
 	
 
 func _input(event):
-	pass
+	if event.is_action_pressed("ui_accept"):
+		print("action pressed")
+		emit_signal("player_activate")
+		
