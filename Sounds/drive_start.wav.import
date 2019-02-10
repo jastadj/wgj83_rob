@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drive_start.wav-f13b778316aaaba924b1472da213f07f.sample"
+
+[deps]
+
+source_file="res://Sounds/drive_start.wav"
+dest_files=[ "res://.import/drive_start.wav-f13b778316aaaba924b1472da213f07f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

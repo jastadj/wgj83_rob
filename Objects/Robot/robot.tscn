@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Objects/Robot/robot.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Robot/tread.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Robot/robot_body.png" type="Texture" id=3]
 [ext_resource path="res://Objects/Robot/arm.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/drive_stop.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/drive_start.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/drive.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -60,5 +63,32 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="DriveStopSound" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DriveStartSound" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DriveSound" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

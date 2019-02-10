@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="wgj83_rob"
-run/main_scene="res://Levels/level01.tscn"
+run/main_scene="res://Menus/MainMenu/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -41,6 +41,10 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
 }
 
 [input]

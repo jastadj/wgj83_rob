@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/160432__beerbelly38__dental-chair-servo-switch.wav-c478b8cad83196d5b9ab528147478ff6.sample"
+
+[deps]
+
+source_file="res://Sounds/160432__beerbelly38__dental-chair-servo-switch.wav"
+dest_files=[ "res://.import/160432__beerbelly38__dental-chair-servo-switch.wav-c478b8cad83196d5b9ab528147478ff6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

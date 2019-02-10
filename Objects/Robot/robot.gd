@@ -8,9 +8,14 @@ var rotation_speed = 3
 var velocity = Vector2(0,0)
 var disable_movement = false
 signal player_activate
+var drive_sound_state = 0
+const DRIVE_VOLUME = -10
 
 func _ready():
-	connect("player_activate", get_tree().root.get_node("Game/bomb1"), "player_activated")
+	# adjust drive volume
+	$DriveStopSound.volume_db = DRIVE_VOLUME
+	$DriveSound.volume_db = DRIVE_VOLUME
+	$DriveStartSound.volume_db = DRIVE_VOLUME
 
 func _process(delta):
 	pass
@@ -29,6 +34,34 @@ func _physics_process(delta):
 	else:
 		drive_dir = 0
 	
+	# drive sound state
+	# if not moving
+	if drive_dir == 0:
+		# but sound state thinks it is, play stop sound, kill drive sound
+		if drive_sound_state == 2:
+			$DriveSound.stop()
+			$DriveStopSound.play()
+			drive_sound_state = 3
+		# if drive stop sound is done
+		elif drive_sound_state == 3:
+			if not $DriveSound.playing:
+				drive_sound_state = 0
+		elif drive_sound_state == 1:
+			$DriveStartSound.stop()
+			drive_sound_state = 0
+	# if moving
+	else:
+		# if sound state is stopped, play drive start sound
+		if drive_sound_state == 0:
+			drive_sound_state = 1
+			$DriveStartSound.play()
+		elif drive_sound_state == 1:
+			if not $DriveStartSound.playing:
+				drive_sound_state = 2
+				$DriveSound.play()
+			
+			
+	
 	# if accelerating
 	if drive_dir != 0:
 		velocity = velocity + ( Vector2(-sin(global_rotation), cos(global_rotation)) * Vector2(drive_dir*acceleration*delta, drive_dir*acceleration*delta) )
@@ -40,8 +73,8 @@ func _physics_process(delta):
 	#print("drive_dir:" + str(drive_dir) + "  vel:" + str(velocity.length()))
 	
 	# set tread speed and move robot in direction its rotated at its current speed
-	$LeftTread.current_speed = velocity.length() * drive_dir
-	$RightTread.current_speed = velocity.length() * drive_dir
+	$LeftTread.current_speed = velocity.length() * drive_dir * 4
+	$RightTread.current_speed = velocity.length() * drive_dir * 4
 	move_and_slide(velocity)
 	
 

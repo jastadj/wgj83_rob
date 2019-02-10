@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/246332__kwahmah-02__five-beeps.wav-b37b7f2bc536b11dad74c02fcf55fc66.sample"
+
+[deps]
+
+source_file="res://Sounds/246332__kwahmah-02__five-beeps.wav"
+dest_files=[ "res://.import/246332__kwahmah-02__five-beeps.wav-b37b7f2bc536b11dad74c02fcf55fc66.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

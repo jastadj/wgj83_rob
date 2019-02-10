@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drive_stop.wav-466285b2c156e5cfb5d8fb2a1ebd2220.sample"
+
+[deps]
+
+source_file="res://Sounds/drive_stop.wav"
+dest_files=[ "res://.import/drive_stop.wav-466285b2c156e5cfb5d8fb2a1ebd2220.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

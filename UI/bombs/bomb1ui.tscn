@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/bombs/bomb1ui.gd" type="Script" id=1]
 [ext_resource path="res://UI/bombs/bombui_bomb1.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://UI/bombs/bombui_GO_button_pressed.png" type="Texture" id=10]
 [ext_resource path="res://UI/bombs/bombui_gobutton.png" type="Texture" id=11]
 [ext_resource path="res://UI/bombs/GoButton.gd" type="Script" id=12]
+[ext_resource path="res://Sounds/246332__kwahmah-02__five-beeps.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sounds/399934__waveplay-old__short-click-snap-perc.wav" type="AudioStream" id=14]
 
 [node name="bomb1ui" type="Control"]
 
@@ -127,5 +129,23 @@ texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 11 )
 script = ExtResource( 12 )
 _sections_unfolded = [ "Textures", "Visibility" ]
+
+[node name="Success_Sound" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 13 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="GoButtonSound" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

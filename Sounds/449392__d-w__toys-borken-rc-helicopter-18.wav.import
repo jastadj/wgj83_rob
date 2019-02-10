@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/449392__d-w__toys-borken-rc-helicopter-18.wav-812ffbc1836c4ca01635fdd2be936bd8.sample"
+
+[deps]
+
+source_file="res://Sounds/449392__d-w__toys-borken-rc-helicopter-18.wav"
+dest_files=[ "res://.import/449392__d-w__toys-borken-rc-helicopter-18.wav-812ffbc1836c4ca01635fdd2be936bd8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

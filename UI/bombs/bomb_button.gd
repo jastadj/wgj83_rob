@@ -25,9 +25,12 @@ func _process(delta):
 
 func button_pressed():
 	if get_parent().get_parent().state != "ready": return
+	$ClickInSound.play()
 	button_down = true
+	
 	
 func button_released():
 	if get_parent().get_parent().state != "ready": return
+	#$ClickOutSound.play()
 	button_down = false
 	get_parent().get_parent().enter_sequence(self)

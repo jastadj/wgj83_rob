@@ -7,6 +7,7 @@ var state = "none"
 var sequence_speed = 0.3
 var sequence_entered = []
 var bomb_source = null
+var solved_sound = "res://Sounds/246332__kwahmah-02__five-beeps.wav"
 
 func _ready():
 	
@@ -57,17 +58,24 @@ func _enter_tree():
 
 func _exit_tree():
 	# when bomb defusal UI exits tree, allow movement again
-	get_tree().root.get_node("Game/Robot").disable_movement = false	
+	if not bomb_source.armed:
+		get_tree().root.get_node("Game/Robot").disable_movement = false	
 	
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		queue_free()
 		
 func go_button_toggled():
+	$GoButtonSound.play()
 	show_sequence()
 	
 func show_sequence():
 	state = "show_sequence"
+	
+	# little delay
+	var timer_start = get_tree().create_timer(0.5)
+	yield(timer_start, "timeout")
+	
 	for i in range(0, sequence.size()):
 		var timer1 = get_tree().create_timer(sequence_speed)
 		$ColorButtons.get_child(sequence[i]).show_bright = true
@@ -90,5 +98,10 @@ func enter_sequence(obj):
 	
 	# if completed sequences
 	if sequence.size() == sequence_entered.size():
+		state = "success"
 		bomb_source.armed = false
+		$Success_Sound.play()
+		yield($Success_Sound, "finished")
+		var timer2 = get_tree().create_timer(0.25)
+		yield(timer2, "timeout")
 		queue_free()
