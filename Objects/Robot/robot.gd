@@ -6,24 +6,28 @@ var acceleration = 150
 var deceleration = 0.80
 var rotation_speed = 3
 var velocity = Vector2(0,0)
+var disable_movement = false
 signal player_activate
 
 func _ready():
-	pass
+	connect("player_activate", get_tree().root.get_node("Game/bomb1"), "player_activated")
 
 func _process(delta):
 	pass
 
 func _physics_process(delta):
 	
-	# drive direction
-	if Input.is_action_pressed("ui_up"): drive_dir = -1
-	elif Input.is_action_pressed("ui_down"): drive_dir = 1
-	else: drive_dir = 0
+	# drive direction as long as movement isn't disable
+	if not disable_movement:
+		if Input.is_action_pressed("ui_up"): drive_dir = -1
+		elif Input.is_action_pressed("ui_down"): drive_dir = 1
+		else: drive_dir = 0
 	
-	# rotation
-	if Input.is_action_pressed("ui_left"): rotate(0.5 * delta * -1 * rotation_speed)
-	elif Input.is_action_pressed("ui_right"): rotate(0.5 * delta * rotation_speed)
+		# rotation
+		if Input.is_action_pressed("ui_left"): rotate(0.5 * delta * -1 * rotation_speed)
+		elif Input.is_action_pressed("ui_right"): rotate(0.5 * delta * rotation_speed)
+	else:
+		drive_dir = 0
 	
 	# if accelerating
 	if drive_dir != 0:
@@ -44,5 +48,5 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		print("action pressed")
-		emit_signal("player_activate")
+		get_parent().player_activate()
 		
