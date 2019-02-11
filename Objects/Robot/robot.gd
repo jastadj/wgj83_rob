@@ -11,6 +11,8 @@ signal player_activate
 var drive_sound_state = 0
 const DRIVE_VOLUME = -10
 
+var sensor_range = 6
+
 func _ready():
 	# adjust drive volume
 	$DriveStopSound.volume_db = DRIVE_VOLUME

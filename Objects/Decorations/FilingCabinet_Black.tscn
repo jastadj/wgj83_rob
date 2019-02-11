@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 15.0467, 15.3203 )
 
-[node name="Desk_Full" type="StaticBody2D" index="0"]
+[node name="FilingCabinet_Black" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
