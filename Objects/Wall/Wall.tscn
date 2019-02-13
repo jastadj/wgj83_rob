@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Objects/Wall/white_wall.png" type="Texture" id=1]
+[ext_resource path="res://Objects/Wall/wall_straight.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 7.879, 14.9126 )
 
-[node name="Wall" type="StaticBody2D"]
+[node name="Wall" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -19,14 +19,14 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 2.57004, 66.5318 )
-scale = Vector2( 1, 5.72079 )
+position = Vector2( 0, -1.89267 )
+scale = Vector2( 1, 2 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 2.71522, 65.9114 )
-scale = Vector2( 0.372388, 5.11946 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 
