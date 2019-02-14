@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://Levels/level_base.gd" type="Script" id=1]
+[ext_resource path="res://Levels/level01.gd" type="Script" id=1]
 [ext_resource path="res://Tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Objects/Decorations/FilingCabinet_Black.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Decorations/Couch_Black.tscn" type="PackedScene" id=4]
@@ -25,7 +25,7 @@
 [ext_resource path="res://Objects/Decorations/filecabinet_black.png" type="Texture" id=23]
 [ext_resource path="res://Objects/Decorations/monitor.png" type="Texture" id=24]
 
-[node name="Game" type="Node" index="0"]
+[node name="Game" type="Node"]
 
 script = ExtResource( 1 )
 level_time = 120

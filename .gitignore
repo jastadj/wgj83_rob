@@ -1,4 +1,4 @@
 ./.import/*
-./ARTRAW/*.import
-./export/
+ARTRAW/*.import
+export/
 .import

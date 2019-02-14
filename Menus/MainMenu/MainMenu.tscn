@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Menus/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/click_in.ogg" type="AudioStream" id=2]
 [ext_resource path="res://ARTRAW/titlemenuimage.png" type="Texture" id=3]
 [ext_resource path="res://ARTRAW/white_wall.png" type="Texture" id=4]
+[ext_resource path="res://Menus/MainMenu/rob_graphic.png" type="Texture" id=5]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -101,5 +102,10 @@ texture = ExtResource( 4 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Visibility" ]
+
+[node name="rob_graphic" type="Sprite" parent="." index="5"]
+
+position = Vector2( 205.726, 125.011 )
+texture = ExtResource( 5 )
 
 
