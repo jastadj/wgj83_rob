@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/90340__digit-al__sonar_faster.wav-5bb44e60bec31cf7e3f9455adcff0c97.sample"
+
+[deps]
+
+source_file="res://raws/music/90340__digit-al__sonar_faster.wav"
+dest_files=[ "res://.import/90340__digit-al__sonar_faster.wav-5bb44e60bec31cf7e3f9455adcff0c97.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

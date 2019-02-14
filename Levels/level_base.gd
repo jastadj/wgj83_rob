@@ -23,7 +23,7 @@ func _process(delta):
 	if closest_bomb:
 		var closest_bomb_distance = closest_bomb.position.distance_to($Robot.position)
 		var sig_str = 100 - (closest_bomb_distance / $Robot.sensor_range)
-		if sig_str >= 90:
+		if sig_str >= 86:
 			closest_bomb.found = true
 		#print(sig_str)
 		$UI/TransmitterUI.signal_strength(sig_str)

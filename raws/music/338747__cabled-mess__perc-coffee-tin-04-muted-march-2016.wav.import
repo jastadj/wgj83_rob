@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/338747__cabled-mess__perc-coffee-tin-04-muted-march-2016.wav-2516d1eb14cd9278e8251f2d64f41251.sample"
+
+[deps]
+
+source_file="res://raws/music/338747__cabled-mess__perc-coffee-tin-04-muted-march-2016.wav"
+dest_files=[ "res://.import/338747__cabled-mess__perc-coffee-tin-04-muted-march-2016.wav-2516d1eb14cd9278e8251f2d64f41251.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
