@@ -1058,4 +1058,22 @@ position = Vector2( -57.0219, 15.8968 )
 rotation = -0.261799
 texture = ExtResource( 20 )
 
+[node name="Couch_Black2" parent="." index="68" instance=ExtResource( 16 )]
+
+position = Vector2( 176.575, -527.721 )
+rotation = 3.14159
+
+[node name="PottedPlant" parent="Couch_Black2" index="2" instance=ExtResource( 18 )]
+
+position = Vector2( 128.575, -2.72064 )
+
+[node name="PottedPlant2" parent="Couch_Black2" index="3" instance=ExtResource( 18 )]
+
+position = Vector2( -144.425, -0.721863 )
+
+[node name="wall_corner" parent="Couch_Black2" index="4" instance=ExtResource( 13 )]
+
+position = Vector2( -624.197, -126.931 )
+rotation = -1.57079
+
 
