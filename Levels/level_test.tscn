@@ -1,18 +1,19 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Levels/level_base.gd" type="Script" id=1]
 [ext_resource path="res://Tiles/tiles.tres" type="TileSet" id=2]
-[ext_resource path="res://Objects/Decorations/FilingCabinet_Black.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Decorations/Desk_Full.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Decorations/Couch_Black.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/bombs/bomb1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Robot/robot.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/Wall/Wall.tscn" type="PackedScene" id=8]
-[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=9]
-[ext_resource path="res://UI/Transmitter/TransmitterUI.tscn" type="PackedScene" id=10]
-[ext_resource path="res://UI/GameMenu/GameMenu.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/white.png" type="Texture" id=12]
-[ext_resource path="res://Sounds/fail_sound.wav" type="AudioStream" id=13]
+[ext_resource path="res://Objects/Decorations/FrontDesk.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Decorations/FilingCabinet_Black.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Decorations/Desk_Full.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Decorations/Couch_Black.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/bombs/bomb1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Robot/robot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Wall/Wall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/Timer/Timer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/Transmitter/TransmitterUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://UI/GameMenu/GameMenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/white.png" type="Texture" id=13]
+[ext_resource path="res://Sounds/fail_sound.wav" type="AudioStream" id=14]
 
 [sub_resource type="Animation" id=4]
 
@@ -118,55 +119,61 @@ __meta__ = {
 
 [node name="Decorations" type="Node" parent="." index="1"]
 
-[node name="FilingCabinet_Black2" parent="Decorations" index="0" instance=ExtResource( 3 )]
+[node name="FrontDesk" parent="Decorations" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 179.001, 90.0003 )
+rotation = 3.14159
+_sections_unfolded = [ "Transform" ]
+
+[node name="FilingCabinet_Black2" parent="Decorations" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 772.247, 272.558 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="FilingCabinet_Black3" parent="Decorations" index="1" instance=ExtResource( 3 )]
+[node name="FilingCabinet_Black3" parent="Decorations" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 772.247, 308.482 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="FilingCabinet_Black4" parent="Decorations" index="2" instance=ExtResource( 3 )]
+[node name="FilingCabinet_Black4" parent="Decorations" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 772.247, 348.597 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="FilingCabinet_Black5" parent="Decorations" index="3" instance=ExtResource( 3 )]
+[node name="FilingCabinet_Black5" parent="Decorations" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 772.247, 385.12 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Desk_Full" parent="Decorations" index="4" instance=ExtResource( 4 )]
+[node name="Desk_Full" parent="Decorations" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 507.205, 98.3725 )
 
-[node name="Couch_Black" parent="Decorations" index="5" instance=ExtResource( 5 )]
+[node name="Couch_Black" parent="Decorations" index="6" instance=ExtResource( 6 )]
 
 position = Vector2( 226.106, 564.78 )
 
-[node name="FilingCabinet_Black" parent="Decorations" index="6" instance=ExtResource( 3 )]
+[node name="FilingCabinet_Black" parent="Decorations" index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 215.361, 173.517 )
 
 [node name="Bombs" type="Node" parent="." index="2"]
 
-[node name="bomb1" parent="Bombs" index="0" instance=ExtResource( 6 )]
+[node name="bomb1" parent="Bombs" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 74, 303 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Robot" parent="." index="3" instance=ExtResource( 7 )]
+[node name="Robot" parent="." index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 160, 342 )
 
-[node name="Wall" parent="." index="4" instance=ExtResource( 8 )]
+[node name="Wall" parent="." index="4" instance=ExtResource( 9 )]
 
 position = Vector2( 53.9335, 279.668 )
 _sections_unfolded = [ "Transform" ]
@@ -179,7 +186,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Timer" parent="UI" index="0" instance=ExtResource( 9 )]
+[node name="Timer" parent="UI" index="0" instance=ExtResource( 10 )]
 
 margin_left = 958.0
 margin_top = 36.0
@@ -187,14 +194,14 @@ margin_right = 998.0
 margin_bottom = 76.0
 timer_in_seconds = 120
 
-[node name="TransmitterUI" parent="UI" index="1" instance=ExtResource( 10 )]
+[node name="TransmitterUI" parent="UI" index="1" instance=ExtResource( 11 )]
 
 margin_left = 24.0
 margin_top = 448.0
 margin_right = 64.0
 margin_bottom = 488.0
 
-[node name="GameMenu" parent="UI" index="2" instance=ExtResource( 11 )]
+[node name="GameMenu" parent="UI" index="2" instance=ExtResource( 12 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
@@ -221,7 +228,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Mouse", "Visibility" ]
@@ -290,7 +297,7 @@ max_lines_visible = -1
 
 [node name="FailSound" type="AudioStreamPlayer" parent="." index="7"]
 
-stream = ExtResource( 13 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

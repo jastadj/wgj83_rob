@@ -7,7 +7,7 @@ func _ready():
 func new_game():
 	$ClickSound.play()
 	randomize()
-	get_tree().change_scene("res://Levels/level01.tscn")
+	get_tree().change_scene("res://Levels/level_test.tscn")
 	
 func quit_game():
 	$ClickSound.play()
