@@ -1,0 +1,505 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Levels/level_base.gd" type="Script" id=1]
+[ext_resource path="res://Tiles/tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Objects/bombs/bomb2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Robot/robot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Wall/Wall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Wall/wall_end.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Wall/wall_corner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Wall/wall_straight_2x.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Wall/wall_straight_4x.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Decorations/Desk_Full.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Decorations/chair_offwhite.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/Decorations/table.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Decorations/Couch_Black.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Decorations/PottedPlant_black.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Decorations/confrence_table.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Decorations/Desk_Empty.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Decorations/monitor.png" type="Texture" id=17]
+[ext_resource path="res://Objects/Decorations/PottedPlant.tscn" type="PackedScene" id=18]
+
+[node name="Game" type="Node" index="0"]
+
+script = ExtResource( 1 )
+level_time = 120
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524274, 0, 0, -524273, 0, 0, -458752, 0, 0, -458751, 0, 0, -458750, 0, 0, -458749, 0, 0, -458748, 0, 0, -458747, 0, 0, -458746, 0, 0, -458745, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -458741, 0, 0, -458740, 0, 0, -458739, 0, 0, -458738, 0, 0, -458737, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -393206, 0, 0, -393205, 0, 0, -393204, 0, 0, -393203, 0, 0, -393202, 0, 0, -393201, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327667, 0, 0, -327666, 0, 0, -327665, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196598, 0, 0, -196597, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Decorations" type="Node" parent="." index="1"]
+
+[node name="Bombs" type="Node" parent="." index="2"]
+
+[node name="bomb2" parent="Bombs" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 78.4737, 42.3684 )
+rotation = -2.09439
+
+[node name="bomb3" parent="Bombs" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 107, 330 )
+rotation = -0.785397
+
+[node name="bomb4" parent="Bombs" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 947, 112 )
+rotation = 2.09439
+
+[node name="bomb5" parent="Bombs" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 341.729, -332.01 )
+rotation = 2.87979
+
+[node name="bomb6" parent="Bombs" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 961, -525 )
+rotation = 0.785397
+
+[node name="bomb7" parent="Bombs" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 632.027, 522.497 )
+rotation = 3.66519
+
+[node name="Robot" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 512, 365 )
+
+[node name="walls" type="Node2D" parent="." index="4"]
+
+[node name="Wall" parent="walls" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 674.149, 632.022 )
+rotation = 1.57079
+
+[node name="wall_end" parent="walls/Wall" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -0.0217285, 64.149 )
+rotation = -1.57079
+
+[node name="wall_end" parent="walls/Wall/wall_end" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( -195.871, -0.0272217 )
+rotation = 3.14159
+
+[node name="wall_corner" parent="walls" index="1" instance=ExtResource( 7 )]
+
+editor/display_folded = true
+position = Vector2( 32.064, 607.974 )
+rotation = 1.57079
+
+[node name="wall_straight_2x" parent="walls/wall_corner" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( -95.9741, 24.0634 )
+rotation = -1.57079
+
+[node name="wall_straight_4x" parent="walls/wall_corner/wall_straight_2x" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 183.078, 119.975 )
+rotation = 1.57079
+
+[node name="wall_straight_4x" parent="walls/wall_corner/wall_straight_2x/wall_straight_4x" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 0.0394897, -642.07 )
+
+[node name="wall_straight_4x" parent="walls" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 1016, 448 )
+
+[node name="wall_corner2" parent="walls" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 992, 607 )
+
+[node name="wall_straight_4x2" parent="walls" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( 1016, 71 )
+
+[node name="Wall2" parent="walls" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 350.106, 631.983 )
+rotation = 1.57079
+
+[node name="wall_straight_4x3" parent="walls" index="6" instance=ExtResource( 9 )]
+
+position = Vector2( 8, 321 )
+
+[node name="wall_straight_2x" parent="walls/wall_straight_4x3" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 0, -191 )
+
+[node name="wall_straight_2x2" parent="walls" index="7" instance=ExtResource( 8 )]
+
+position = Vector2( 126.424, -568 )
+rotation = 1.57079
+
+[node name="wall_straight_2x2" parent="." index="5" instance=ExtResource( 8 )]
+
+position = Vector2( 7, -65 )
+
+[node name="wall_straight_2x3" parent="." index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 7, 16 )
+
+[node name="wall_straight_2x11" parent="." index="7" instance=ExtResource( 8 )]
+
+editor/display_folded = true
+position = Vector2( 1016, 319 )
+
+[node name="Wall" parent="wall_straight_2x11" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( -1, -93 )
+
+[node name="wall_straight_2x22" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 8, 390.172 )
+
+[node name="wall_straight_2x19" parent="." index="9" instance=ExtResource( 8 )]
+
+position = Vector2( 8, -449 )
+
+[node name="wall_corner6" parent="." index="10" instance=ExtResource( 7 )]
+
+position = Vector2( 32.5242, -543.519 )
+rotation = -3.14159
+
+[node name="wall_straight_2x7" parent="." index="11" instance=ExtResource( 8 )]
+
+position = Vector2( 127.956, -567.413 )
+rotation = 1.57079
+
+[node name="wall_straight_2x8" parent="." index="12" instance=ExtResource( 8 )]
+
+position = Vector2( 8, -321 )
+
+[node name="wall_straight_2x9" parent="." index="13" instance=ExtResource( 8 )]
+
+position = Vector2( 8, -192 )
+
+[node name="wall_straight_4x" parent="." index="14" instance=ExtResource( 9 )]
+
+position = Vector2( 319.764, -568.405 )
+rotation = 1.57079
+
+[node name="wall_straight_4x2" parent="." index="15" instance=ExtResource( 9 )]
+
+position = Vector2( 573.359, -568.405 )
+rotation = 1.57079
+
+[node name="wall_straight_4x3" parent="." index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 826.395, -568.405 )
+rotation = 1.57079
+
+[node name="wall_straight_4x4" parent="." index="17" instance=ExtResource( 9 )]
+
+position = Vector2( 896.959, -568.352 )
+rotation = 1.57079
+
+[node name="wall_straight_4x5" parent="." index="18" instance=ExtResource( 9 )]
+
+position = Vector2( 1015.56, -433.947 )
+rotation = 3.14159
+
+[node name="wall_straight_4x6" parent="." index="19" instance=ExtResource( 9 )]
+
+position = Vector2( 1015.61, -180.347 )
+rotation = 3.14159
+
+[node name="wall_straight_4x7" parent="." index="20" instance=ExtResource( 9 )]
+
+position = Vector2( 438, 512 )
+
+[node name="wall_straight_4x12" parent="." index="21" instance=ExtResource( 9 )]
+
+position = Vector2( 585, 512 )
+
+[node name="wall_straight_4x8" parent="." index="22" instance=ExtResource( 9 )]
+
+position = Vector2( 439, 163 )
+
+[node name="wall_straight_4x" parent="wall_straight_4x8" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( -134.527, 1.00008 )
+rotation = 1.57079
+
+[node name="wall_straight_4x8" parent="wall_straight_4x8" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 443.473, 1.00007 )
+rotation = 1.57079
+
+[node name="wall_straight_4x4" parent="wall_straight_4x8" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( -134.527, -412 )
+rotation = 1.57079
+
+[node name="wall_straight_4x5" parent="wall_straight_4x8" index="5" instance=ExtResource( 9 )]
+
+position = Vector2( 449.473, -412 )
+rotation = 1.57079
+
+[node name="wall_straight_4x2" parent="wall_straight_4x8" index="6" instance=ExtResource( 9 )]
+
+position = Vector2( -300, 1.00008 )
+rotation = 1.57079
+
+[node name="wall_straight_4x7" parent="wall_straight_4x8" index="7" instance=ExtResource( 9 )]
+
+position = Vector2( 278, 1.00007 )
+rotation = 1.57079
+
+[node name="wall_straight_4x3" parent="wall_straight_4x8" index="8" instance=ExtResource( 9 )]
+
+position = Vector2( -300, -412 )
+rotation = 1.57079
+
+[node name="wall_straight_4x6" parent="wall_straight_4x8" index="9" instance=ExtResource( 9 )]
+
+position = Vector2( 284, -412 )
+rotation = 1.57079
+
+[node name="wall_straight_4x13" parent="." index="23" instance=ExtResource( 9 )]
+
+position = Vector2( 586, 163 )
+
+[node name="wall_straight_4x9" parent="." index="24" instance=ExtResource( 9 )]
+
+position = Vector2( 441, -189 )
+
+[node name="wall_straight_4x11" parent="." index="25" instance=ExtResource( 9 )]
+
+position = Vector2( 588, -189 )
+
+[node name="wall_straight_4x10" parent="." index="26" instance=ExtResource( 9 )]
+
+position = Vector2( 441, -355 )
+
+[node name="wall_straight_4x14" parent="." index="27" instance=ExtResource( 9 )]
+
+position = Vector2( 588, -355 )
+
+[node name="Desk_Full" parent="." index="28" instance=ExtResource( 10 )]
+
+position = Vector2( 166.575, 280 )
+rotation = 1.57079
+
+[node name="chair_offwhite" parent="Desk_Full" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( -5.2468, 56.475 )
+rotation = 3.14159
+
+[node name="Desk_Full2" parent="." index="29" instance=ExtResource( 10 )]
+
+position = Vector2( 823.741, 296.29 )
+rotation = -1.57079
+
+[node name="chair_offwhite" parent="Desk_Full2" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( -5.2468, 56.475 )
+rotation = 3.14159
+
+[node name="table" parent="." index="30" instance=ExtResource( 12 )]
+
+position = Vector2( 341, 525.293 )
+
+[node name="chair_offwhite" parent="table" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( -1, -64 )
+
+[node name="chair_offwhite2" parent="table" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 64.6722, 2.56299 )
+rotation = 1.57079
+
+[node name="chair_offwhite3" parent="table" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( -61.3278, 3.67224 )
+rotation = -1.57079
+
+[node name="chair_offwhite4" parent="table" index="5" instance=ExtResource( 11 )]
+
+position = Vector2( -0.327759, 62.7815 )
+rotation = 3.14159
+
+[node name="table2" parent="." index="31" instance=ExtResource( 12 )]
+
+position = Vector2( 915, 525.293 )
+
+[node name="chair_offwhite" parent="table2" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( -1, -64 )
+
+[node name="chair_offwhite2" parent="table2" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 64.6722, 2.56299 )
+rotation = 1.57079
+
+[node name="chair_offwhite3" parent="table2" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( -61.3278, 3.67224 )
+rotation = -1.57079
+
+[node name="chair_offwhite4" parent="table2" index="5" instance=ExtResource( 11 )]
+
+position = Vector2( -0.327759, 62.7815 )
+rotation = 3.14159
+
+[node name="Couch_Black" parent="." index="32" instance=ExtResource( 13 )]
+
+position = Vector2( 112, 592.293 )
+
+[node name="Couch_Black2" parent="." index="33" instance=ExtResource( 13 )]
+
+position = Vector2( 686, 592.293 )
+
+[node name="Desk_Full3" parent="." index="34" instance=ExtResource( 10 )]
+
+position = Vector2( 312.9, -109.75 )
+rotation = -3.14159
+
+[node name="chair_offwhite" parent="Desk_Full3" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( -1.04977, 55.25 )
+rotation = -3.14159
+
+[node name="Couch_Black" parent="Desk_Full3/chair_offwhite" index="2" instance=ExtResource( 13 )]
+
+position = Vector2( -100.598, 290.101 )
+
+[node name="PottedPlant" parent="." index="35" instance=ExtResource( 14 )]
+
+position = Vector2( 72, 116 )
+
+[node name="PottedPlant" parent="PottedPlant" index="2" instance=ExtResource( 14 )]
+
+position = Vector2( 296, 5 )
+
+[node name="Couch_Black" parent="PottedPlant" index="3" instance=ExtResource( 13 )]
+
+position = Vector2( -23.4988, -211.121 )
+rotation = 1.57079
+
+[node name="confrence_table" parent="." index="36" instance=ExtResource( 15 )]
+
+position = Vector2( 802, -111 )
+
+[node name="chair_offwhite" parent="confrence_table" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( 0, -114 )
+
+[node name="chair_offwhite2" parent="confrence_table" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( -60.7147, -44.2622 )
+rotation = -1.57079
+
+[node name="chair_offwhite3" parent="confrence_table" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( -62.6195, 34.0232 )
+rotation = -1.57079
+
+[node name="chair_offwhite4" parent="confrence_table" index="5" instance=ExtResource( 11 )]
+
+position = Vector2( 59.1079, -53.1311 )
+rotation = 1.57079
+
+[node name="chair_offwhite5" parent="confrence_table" index="6" instance=ExtResource( 11 )]
+
+position = Vector2( 62.0128, 21.6786 )
+rotation = 1.57079
+
+[node name="chair_offwhite6" parent="confrence_table" index="7" instance=ExtResource( 11 )]
+
+position = Vector2( 0.904907, 119.416 )
+rotation = 3.14159
+
+[node name="Desk_Empty" parent="confrence_table/chair_offwhite6" index="2" instance=ExtResource( 16 )]
+
+position = Vector2( 1.75421, -125.214 )
+
+[node name="monitor" type="Sprite" parent="confrence_table/chair_offwhite6/Desk_Empty" index="2"]
+
+position = Vector2( -0.961078, -4.41354 )
+scale = Vector2( 2.0237, 1.60338 )
+texture = ExtResource( 17 )
+
+[node name="Desk_Full4" parent="." index="37" instance=ExtResource( 10 )]
+
+position = Vector2( 120.05, -486.45 )
+rotation = 1.57079
+
+[node name="chair_offwhite" parent="Desk_Full4" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( -4.55023, 60.0501 )
+rotation = -3.14159
+
+[node name="Couch_Black3" parent="." index="38" instance=ExtResource( 13 )]
+
+position = Vector2( 188, -290 )
+
+[node name="PottedPlant" parent="Couch_Black3" index="2" instance=ExtResource( 18 )]
+
+position = Vector2( -139, -7 )
+
+[node name="PottedPlant2" parent="Couch_Black3" index="3" instance=ExtResource( 18 )]
+
+position = Vector2( 138, -4 )
+
+[node name="Desk_Empty" parent="Couch_Black3" index="4" instance=ExtResource( 16 )]
+
+position = Vector2( 220.482, -109.667 )
+rotation = 1.57079
+
+[node name="Desk_Full5" parent="." index="39" instance=ExtResource( 10 )]
+
+position = Vector2( 872.227, -425.143 )
+rotation = -1.57079
+
+[node name="chair_offwhite" parent="Desk_Full5" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( 2.00131, 53.4848 )
+rotation = -3.14159
+
+[node name="table3" parent="." index="40" instance=ExtResource( 12 )]
+
+position = Vector2( 698, -334 )
+
+[node name="chair_offwhite" parent="table3" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( -61.81, 1.79337 )
+rotation = -1.57079
+
+[node name="chair_offwhite" parent="table3/chair_offwhite" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( 62.7935, 61.8099 )
+rotation = 1.57079
+
+[node name="chair_offwhite2" parent="table3" index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 60.9548, 0.301666 )
+rotation = 1.57079
+
+[node name="chair_offwhite3" parent="table3" index="4" instance=ExtResource( 11 )]
+
+position = Vector2( -2.58667, 58.8884 )
+rotation = 3.14159
+
+
