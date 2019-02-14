@@ -95,6 +95,7 @@ func enter_sequence(obj):
 			# if entered wrong sequence
 			if sequence[sequence_entered.size()-1] != i:
 				get_tree().root.get_node("Game").failed()
+				queue_free()
 
 	# if completed sequences
 	if sequence.size() == sequence_entered.size():

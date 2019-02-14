@@ -1,22 +1,27 @@
 extends Node
 
 signal player_activate
+
+export(int) var level_time = 120
 var level_failed = false
 var level_passed = false
 var next_level = null
+
+func _ready():
+	$Robot/UI/Timer.timer_in_seconds = level_time
 
 func player_activate():
 	# check all bombs to see which one the player is in and activate the bomb defusal ui
 	for bomb in $Bombs.get_children():
 		if bomb.player_in && bomb.armed && bomb.found:
 			var newbombui = bomb.bomb_defusal_ui.instance()
-			$UI.add_child(newbombui)
+			$Robot/UI.add_child(newbombui)
 			newbombui.bomb_source = bomb
 
 func _process(delta):
 	
 	if level_failed or level_passed:
-		$CanvasLayer/Panel.mouse_filter = Control.MOUSE_FILTER_STOP
+		$Robot/UI/Panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	# if failed level, fade to black and exit to main menu
 	if level_failed: return
@@ -30,18 +35,18 @@ func _process(delta):
 		if sig_str >= 86:
 			closest_bomb.found = true
 		#print(sig_str)
-		$UI/TransmitterUI.signal_strength(sig_str)
+		$Robot/UI/TransmitterUI.signal_strength(sig_str)
 	# no valid bombs found, zero out signal strength
 	else:
-		$UI/TransmitterUI.signal_strength(0)
+		$Robot/UI/TransmitterUI.signal_strength(0)
 		
 		if get_armed_bomb_count() == 0:
-			$UI/Timer.freeze = true
+			$Robot/UI/Timer.freeze = true
 			if not level_passed:
 				success()
 	
 	# if ran out of time, fail
-	if $UI/Timer.timer_in_seconds == 0 && not level_failed:
+	if $Robot/UI/Timer.timer_in_seconds == 0 && not level_failed:
 		failed()
 
 func get_armed_bomb_count():
@@ -60,11 +65,11 @@ func success():
 	# play fade animation
 	var timer1 = get_tree().create_timer(1)
 	yield(timer1, "timeout")
-	$CanvasLayer/Panel/AnimationPlayer.play("fadetoblack")
-	yield($CanvasLayer/Panel/AnimationPlayer, "animation_finished")
+	$Robot/UI/Panel/AnimationPlayer.play("fadetoblack")
+	yield($Robot/UI/Panel/AnimationPlayer, "animation_finished")
 	var timer2 = get_tree().create_timer(1)
 	yield(timer2, "timeout")	
-	$CanvasLayer/success_label.show()
+	$Robot/UI/success_label.show()
 	var timer3 = get_tree().create_timer(2)
 	yield(timer3, "timeout")
 	# switch to next level is applicable
@@ -75,7 +80,7 @@ func success():
 	
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		$UI/GameMenu.toggle()
+		$Robot/UI/GameMenu.toggle()
 
 func failed():
 	level_failed = true
@@ -84,18 +89,18 @@ func failed():
 	$Robot.disable_movement = true
 	
 	# play death animation
-	$CanvasLayer/Panel/AnimationPlayer.play("white")
-	$CanvasLayer/fail_label.show()
+	$Robot/UI/Panel/AnimationPlayer.play("white")
+	$Robot/UI/fail_label.show()
 	#yield($CanvasLayer/Panel/AnimationPlayer, "animation_finished")
-	$FailSound.play()
-	yield($FailSound, "finished")
+	$Robot/UI/FailSound.play()
+	yield($Robot/UI/FailSound, "finished")
 	
 	
 	var timer1 = get_tree().create_timer(1)
 	yield(timer1, "timeout")
-	$CanvasLayer/Panel/AnimationPlayer.play("whitetoblack")
+	$Robot/UI/Panel/AnimationPlayer.play("whitetoblack")
 	
-	yield($CanvasLayer/Panel/AnimationPlayer, "animation_finished")
+	yield($Robot/UI/Panel/AnimationPlayer, "animation_finished")
 	get_tree().change_scene("res://Menus/MainMenu/MainMenu.tscn")
 	
 		
@@ -119,7 +124,4 @@ func get_nearest_bomb():
 	
 	# return closest bomb
 	return closest_bomb
-		
-		
-	
 	
