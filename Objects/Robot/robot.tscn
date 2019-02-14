@@ -197,7 +197,6 @@ margin_bottom = 488.0
 
 [node name="Panel" type="TextureRect" parent="UI" index="3"]
 
-editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
