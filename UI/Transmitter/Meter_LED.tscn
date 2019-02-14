@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Meter_LED.gd" type="Script" id=1]
+[ext_resource path="res://UI/Transmitter/Meter_LED.gd" type="Script" id=1]
 [ext_resource path="res://UI/Transmitter/led.png" type="Texture" id=2]
 [ext_resource path="res://UI/Transmitter/transmeter_window.png" type="Texture" id=3]
+
+
 
 [node name="Meter_LED" type="Node2D"]
 

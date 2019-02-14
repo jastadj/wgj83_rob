@@ -1,3 +1,2 @@
-.import
-export/
+./.import/
 ./ARTRAW/*.import
