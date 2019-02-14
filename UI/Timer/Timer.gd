@@ -5,6 +5,7 @@ const BLINK_SPEED = 0.15
 export(int) var timer_in_seconds = 0
 var _delta_accumulator = 0
 var blink_timer = null
+var freeze = false
 
 func _ready():
 	display_time(0)	
@@ -13,6 +14,10 @@ func _process(delta):
 	
 	# collect delta times between process, if over 1 second, decrement timer and
 	# set new delta accumulator
+	if freeze:
+		_delta_accumulator = 0
+		return
+	
 	_delta_accumulator += delta	
 	if _delta_accumulator >= 1.0:
 		var sec = int(_delta_accumulator)
@@ -38,7 +43,7 @@ func display_time(time_s):
 	$xxxs.val = seconds % 10
 	
 	# if timer is at or below CRUNCH_TIME, blink
-	if timer_in_seconds <= CRUNCH_TIME:
+	if timer_in_seconds <= CRUNCH_TIME or freeze:
 		if not blink_timer:
 			blink_timer = get_tree().create_timer(BLINK_SPEED * 2)
 		
