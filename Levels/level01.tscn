@@ -1,17 +1,29 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Levels/level_base.gd" type="Script" id=1]
 [ext_resource path="res://Tiles/tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Objects/Decorations/FilingCabinet_Black.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Decorations/Couch_Black.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/bombs/bomb1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/Robot/robot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Wall/Wall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/Wall/wall_end.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Objects/Wall/wall_straight_2x.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Objects/Wall/wall_corner.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Objects/Wall/wall_straight_4x.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/Decorations/front_desk.png" type="Texture" id=12]
+[ext_resource path="res://Objects/Decorations/Desk_Empty.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Decorations/desk_full.png" type="Texture" id=6]
+[ext_resource path="res://Objects/Decorations/FilingCabinet_White.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Decorations/PottedPlant.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Decorations/confrence_table.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Decorations/chair_offwhite.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/Decorations/Desk_Full.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/bombs/bomb1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/Robot/robot.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Wall/Wall.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Wall/wall_end.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Objects/Wall/wall_straight_2x.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Wall/wall_corner.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/Wall/wall_straight_4x.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Objects/Decorations/PottedPlant_black.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/Decorations/front_desk.png" type="Texture" id=20]
+[ext_resource path="res://Objects/Decorations/phone.png" type="Texture" id=21]
+[ext_resource path="res://Objects/Decorations/filecabinet_white.png" type="Texture" id=22]
+[ext_resource path="res://Objects/Decorations/filecabinet_black.png" type="Texture" id=23]
+[ext_resource path="res://Objects/Decorations/monitor.png" type="Texture" id=24]
 
 [node name="Game" type="Node" index="0"]
 
@@ -65,11 +77,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Couch_Black" parent="Decorations" index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 827, 574 )
+position = Vector2( 773, 591 )
 
 [node name="Couch_Black" parent="Decorations/Couch_Black" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 123.304, -189.644 )
+position = Vector2( 202.233, -267.844 )
 rotation = -1.57079
 
 [node name="FilingCabinet_Black" parent="Decorations" index="5" instance=ExtResource( 3 )]
@@ -80,165 +92,365 @@ position = Vector2( 592, 33 )
 
 position = Vector2( -32, 0 )
 
+[node name="Desk_Empty" parent="Decorations" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 124, -154 )
+
+[node name="desk_full" type="Sprite" parent="Decorations/Desk_Empty" index="2"]
+
+position = Vector2( 0, 1 )
+texture = ExtResource( 6 )
+
+[node name="FilingCabinet_White" parent="Decorations/Desk_Empty/desk_full" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( -85, -7 )
+
+[node name="PottedPlant" parent="Decorations/Desk_Empty/desk_full/FilingCabinet_White" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 172, 3 )
+
+[node name="FilingCabinet_Black" parent="Decorations/Desk_Empty/desk_full/FilingCabinet_White" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 137.19, 141.282 )
+rotation = -3.14159
+
+[node name="FilingCabinet_Black" parent="Decorations/Desk_Empty/desk_full/FilingCabinet_White/FilingCabinet_Black" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 33.7405, -0.482296 )
+
+[node name="FilingCabinet_Black" parent="Decorations/Desk_Empty/desk_full/FilingCabinet_White/FilingCabinet_Black/FilingCabinet_Black" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 32.5662, 0.239355 )
+
+[node name="FilingCabinet_Black" parent="Decorations/Desk_Empty/desk_full/FilingCabinet_White/FilingCabinet_Black/FilingCabinet_Black/FilingCabinet_Black" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 31.8802, 0.439983 )
+
+[node name="Couch_Black2" parent="Decorations" index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 49.9864, 302.365 )
+rotation = 1.5708
+
+[node name="confrence_table" parent="Decorations" index="8" instance=ExtResource( 9 )]
+
+position = Vector2( 510, -153 )
+
+[node name="chair_offwhite" parent="Decorations/confrence_table" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 3, 121 )
+rotation = 3.14159
+
+[node name="chair_offwhite" parent="Decorations/confrence_table/chair_offwhite" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 390, 73.0017 )
+
+[node name="chair_offwhite" parent="Decorations/confrence_table/chair_offwhite/chair_offwhite" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( -771.227, -35.0238 )
+rotation = 3.14159
+
+[node name="chair_offwhite" parent="Decorations/confrence_table/chair_offwhite/chair_offwhite/chair_offwhite" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 2.22986, -227.931 )
+rotation = -3.14159
+
+[node name="chair_offwhite" parent="Decorations/confrence_table/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 325.961, -196.276 )
+rotation = -1.57079
+
+[node name="chair_offwhite" parent="Decorations/confrence_table/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( -77.6833, -1.77252 )
+
+[node name="chair_offwhite" parent="Decorations/confrence_table/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 75.8611, 124.762 )
+rotation = 3.14159
+
+[node name="chair_offwhite" parent="Decorations/confrence_table/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 75.6336, -0.999451 )
+
+[node name="chair_offwhite" parent="Decorations/confrence_table/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite/chair_offwhite" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 95.9105, 65.4956 )
+rotation = 1.57079
+
+[node name="Desk_Full" parent="Decorations" index="9" instance=ExtResource( 11 )]
+
+position = Vector2( 125, -347 )
+
 [node name="Bombs" type="Node" parent="." index="2"]
 
-[node name="bomb1" parent="Bombs" index="0" instance=ExtResource( 5 )]
+[node name="bomb1" parent="Bombs" index="0" instance=ExtResource( 12 )]
 
-position = Vector2( 74, 303 )
+position = Vector2( 430.786, 39.2886 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Robot" parent="." index="3" instance=ExtResource( 6 )]
+[node name="Couch_Black" parent="Bombs/bomb1" index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 166, 346 )
+position = Vector2( 551.084, 187.38 )
+rotation = -1.57079
+
+[node name="bomb2" parent="Bombs" index="1" instance=ExtResource( 12 )]
+
+position = Vector2( 951, 562 )
+
+[node name="bomb3" parent="Bombs" index="2" instance=ExtResource( 12 )]
+
+position = Vector2( 850, -214 )
+
+[node name="bomb4" parent="Bombs" index="3" instance=ExtResource( 12 )]
+
+position = Vector2( 971, -528 )
+
+[node name="bomb1" parent="Bombs/bomb4" index="3" instance=ExtResource( 12 )]
+
+position = Vector2( -548, 136 )
+scale = Vector2( 0.9375, 1 )
+
+[node name="Robot" parent="." index="3" instance=ExtResource( 13 )]
+
+position = Vector2( 167, 348 )
 
 [node name="walls" type="Node2D" parent="." index="4"]
 
-[node name="Wall" parent="walls" index="0" instance=ExtResource( 7 )]
+position = Vector2( 0, -1 )
 
+[node name="Wall" parent="walls" index="0" instance=ExtResource( 14 )]
+
+editor/display_folded = true
 position = Vector2( 674.149, 632.022 )
 rotation = 1.57079
 
-[node name="wall_end" parent="walls/Wall" index="2" instance=ExtResource( 8 )]
+[node name="wall_end" parent="walls/Wall" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( -0.0217285, 64.149 )
 rotation = -1.57079
 
-[node name="wall_end" parent="walls/Wall/wall_end" index="2" instance=ExtResource( 8 )]
+[node name="wall_end" parent="walls/Wall/wall_end" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( -195.871, -0.0272217 )
 rotation = 3.14159
 
-[node name="wall_straight_2x" parent="walls/Wall" index="3" instance=ExtResource( 9 )]
+[node name="wall_straight_2x" parent="walls/Wall" index="3" instance=ExtResource( 16 )]
 
 position = Vector2( -889.02, -341.857 )
 rotation = 1.57079
 
-[node name="wall_corner" parent="walls" index="1" instance=ExtResource( 10 )]
+[node name="wall_corner" parent="walls" index="1" instance=ExtResource( 17 )]
 
+editor/display_folded = true
 position = Vector2( 32.064, 607.974 )
 rotation = 1.57079
 
-[node name="wall_straight_2x" parent="walls/wall_corner" index="2" instance=ExtResource( 9 )]
+[node name="wall_straight_2x" parent="walls/wall_corner" index="2" instance=ExtResource( 16 )]
 
 position = Vector2( -95.9745, 24.0638 )
 rotation = -1.57079
 
-[node name="wall_straight_4x" parent="walls/wall_corner/wall_straight_2x" index="2" instance=ExtResource( 11 )]
+[node name="wall_straight_4x" parent="walls/wall_corner/wall_straight_2x" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( 183.078, 119.975 )
 rotation = 1.57079
 
-[node name="wall_straight_4x" parent="walls/wall_corner/wall_straight_2x/wall_straight_4x" index="2" instance=ExtResource( 11 )]
+[node name="wall_straight_4x" parent="walls/wall_corner/wall_straight_2x/wall_straight_4x" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( 0.0394897, -642.07 )
 
-[node name="wall_straight_4x" parent="walls" index="2" instance=ExtResource( 11 )]
+[node name="wall_straight_4x" parent="walls" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( 1016, 448 )
 
-[node name="wall_corner2" parent="walls" index="3" instance=ExtResource( 10 )]
+[node name="wall_corner2" parent="walls" index="3" instance=ExtResource( 17 )]
 
 position = Vector2( 992, 607 )
 
-[node name="wall_straight_4x2" parent="walls" index="4" instance=ExtResource( 11 )]
+[node name="wall_straight_4x2" parent="walls" index="4" instance=ExtResource( 18 )]
 
 position = Vector2( 1016, 193 )
 
-[node name="wall_corner3" parent="walls" index="5" instance=ExtResource( 10 )]
+[node name="wall_corner3" parent="walls" index="5" instance=ExtResource( 17 )]
 
 position = Vector2( 991.56, 32.0328 )
 rotation = -1.57079
 
-[node name="Wall2" parent="walls" index="6" instance=ExtResource( 7 )]
+[node name="Wall2" parent="walls" index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 350.106, 631.983 )
 rotation = 1.57079
 
-[node name="wall_straight_4x3" parent="walls" index="7" instance=ExtResource( 11 )]
+[node name="wall_straight_4x3" parent="walls" index="7" instance=ExtResource( 18 )]
 
 position = Vector2( 8, 321 )
 
-[node name="wall_straight_2x" parent="walls/wall_straight_4x3" index="2" instance=ExtResource( 9 )]
+[node name="wall_straight_2x" parent="walls/wall_straight_4x3" index="2" instance=ExtResource( 16 )]
 
 position = Vector2( 0, -191 )
 
-[node name="wall_corner" parent="walls/wall_straight_4x3/wall_straight_2x" index="2" instance=ExtResource( 10 )]
+[node name="wall_corner" parent="walls/wall_straight_4x3/wall_straight_2x" index="2" instance=ExtResource( 17 )]
 
 position = Vector2( 24.0561, -97.9719 )
 rotation = -3.14159
 
-[node name="wall_straight_2x" parent="walls/wall_straight_4x3/wall_straight_2x" index="3" instance=ExtResource( 9 )]
+[node name="wall_straight_2x" parent="walls/wall_straight_4x3/wall_straight_2x" index="3" instance=ExtResource( 16 )]
 
 position = Vector2( 120.093, -121.914 )
 rotation = 1.57079
 
-[node name="wall_straight_2x" parent="walls/wall_straight_4x3/wall_straight_2x/wall_straight_2x" index="2" instance=ExtResource( 9 )]
+[node name="wall_straight_2x" parent="walls/wall_straight_4x3/wall_straight_2x/wall_straight_2x" index="2" instance=ExtResource( 16 )]
 
 position = Vector2( -0.000255585, -767.473 )
 
-[node name="wall_corner4" parent="walls" index="8" instance=ExtResource( 10 )]
+[node name="wall_corner4" parent="walls" index="8" instance=ExtResource( 17 )]
 
-position = Vector2( 415.67, -15.9304 )
+position = Vector2( 415.993, -15.9304 )
 rotation = 1.57079
 
-[node name="wall_corner5" parent="walls" index="9" instance=ExtResource( 10 )]
+[node name="wall_corner5" parent="walls" index="9" instance=ExtResource( 17 )]
 
 position = Vector2( 607, -16 )
 
-[node name="wall_corner6" parent="walls" index="10" instance=ExtResource( 10 )]
+[node name="wall_corner6" parent="walls" index="10" instance=ExtResource( 17 )]
 
 position = Vector2( 224, -16 )
 
-[node name="wall_corner7" parent="walls" index="11" instance=ExtResource( 10 )]
+[node name="wall_corner7" parent="walls" index="11" instance=ExtResource( 17 )]
 
 position = Vector2( 799.546, -15.8984 )
 rotation = 1.57079
 
-[node name="wall_corner8" parent="walls" index="12" instance=ExtResource( 10 )]
+[node name="wall_corner8" parent="walls" index="12" instance=ExtResource( 17 )]
 
 position = Vector2( 991.962, -160.491 )
 rotation = -1.57079
 
-[node name="wall_corner9" parent="walls" index="13" instance=ExtResource( 10 )]
+[node name="wall_corner9" parent="walls" index="13" instance=ExtResource( 17 )]
 
 position = Vector2( 991.538, -544.004 )
 rotation = -1.57079
 
-[node name="wall_straight_2x" parent="." index="5" instance=ExtResource( 9 )]
+[node name="wall_corner10" parent="walls" index="14" instance=ExtResource( 17 )]
+
+position = Vector2( 32.012, -352.949 )
+rotation = -3.14159
+
+[node name="wall_straight_2x" parent="walls" index="15" instance=ExtResource( 16 )]
+
+position = Vector2( 128.037, -376.887 )
+rotation = 1.57079
+
+[node name="PottedPlant" parent="walls" index="16" instance=ExtResource( 19 )]
+
+position = Vector2( 946, 563 )
+
+[node name="Desk_Full" parent="walls" index="17" instance=ExtResource( 11 )]
+
+position = Vector2( 896.983, -24.2004 )
+rotation = 3.14159
+
+[node name="wall_straight_2x2" parent="walls" index="18" instance=ExtResource( 16 )]
+
+position = Vector2( 510.161, -440.321 )
+rotation = 1.57079
+
+[node name="wall_corner" parent="walls/wall_straight_2x2" index="2" instance=ExtResource( 17 )]
+
+position = Vector2( 24.0011, -96.0568 )
+rotation = -3.14159
+
+[node name="wall_corner" parent="walls/wall_straight_2x2/wall_corner" index="2" instance=ExtResource( 17 )]
+
+position = Vector2( 0.0757751, -191.803 )
+rotation = -1.57079
+
+[node name="wall_straight_2x3" parent="walls" index="19" instance=ExtResource( 16 )]
+
+position = Vector2( 631, -112 )
+
+[node name="wall_straight_2x" parent="walls/wall_straight_2x3" index="2" instance=ExtResource( 16 )]
+
+position = Vector2( -241, -127 )
+
+[node name="wall_straight_2x" parent="walls/wall_straight_2x3/wall_straight_2x" index="2" instance=ExtResource( 16 )]
+
+position = Vector2( 241, 0 )
+
+[node name="wall_straight_2x4" parent="walls" index="20" instance=ExtResource( 16 )]
+
+position = Vector2( 390, -111 )
+
+[node name="wall_corner11" parent="walls" index="21" instance=ExtResource( 17 )]
+
+position = Vector2( 799.952, -399.239 )
+rotation = 1.57079
+
+[node name="Couch_Black" parent="walls/wall_corner11" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -127.031, 666.268 )
+rotation = 1.57079
+
+[node name="Desk_Full" parent="walls/wall_corner11/Couch_Black" index="2" instance=ExtResource( 11 )]
+
+position = Vector2( -849.508, -86.6758 )
+rotation = -1.57079
+
+[node name="chair_offwhite" parent="walls/wall_corner11/Couch_Black/Desk_Full" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( 3.2717, 46.9334 )
+rotation = -3.14159
+
+[node name="FilingCabinet_Black" parent="walls/wall_corner11/Couch_Black/Desk_Full/chair_offwhite" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 89.6159, 53.6489 )
+rotation = 3.14159
+
+[node name="FilingCabinet_Black" parent="walls/wall_corner11/Couch_Black/Desk_Full/chair_offwhite/FilingCabinet_Black" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 124.291, 189.379 )
+rotation = 1.57079
+scale = Vector2( 1.00906, 1 )
+
+[node name="FilingCabinet_Black" parent="walls/wall_corner11/Couch_Black/Desk_Full/chair_offwhite/FilingCabinet_Black/FilingCabinet_Black" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -32.5759, -0.384338 )
+
+[node name="wall_straight_2x" parent="." index="5" instance=ExtResource( 16 )]
 
 position = Vector2( 511.922, 7.90249 )
 rotation = 1.57079
 
-[node name="wall_straight_2x2" parent="." index="6" instance=ExtResource( 9 )]
+[node name="wall_straight_2x2" parent="." index="6" instance=ExtResource( 16 )]
 
 position = Vector2( 7, -65 )
 
-[node name="wall_corner" parent="wall_straight_2x2" index="2" instance=ExtResource( 10 )]
+[node name="wall_corner" parent="wall_straight_2x2" index="2" instance=ExtResource( 17 )]
 
-position = Vector2( 24.38, -95.8088 )
+position = Vector2( 25.3267, -96.0723 )
 rotation = 3.14159
 
-[node name="wall_straight_2x" parent="wall_straight_2x2/wall_corner" index="2" instance=ExtResource( 9 )]
+[node name="wall_straight_2x" parent="wall_straight_2x2/wall_corner" index="2" instance=ExtResource( 16 )]
 
-position = Vector2( -96.2325, 24.0064 )
+position = Vector2( -95.6978, 23.7429 )
 rotation = 1.57079
 
-[node name="wall_corner" parent="." index="7" instance=ExtResource( 10 )]
+[node name="wall_corner" parent="." index="7" instance=ExtResource( 17 )]
 
-position = Vector2( 223.56, -160.618 )
+position = Vector2( 224.049, -161.015 )
 rotation = -1.57079
 
-[node name="wall_straight_2x3" parent="." index="8" instance=ExtResource( 9 )]
+[node name="wall_straight_2x3" parent="." index="8" instance=ExtResource( 16 )]
 
 position = Vector2( 1016, -65 )
 
-[node name="wall_straight_2x4" parent="." index="9" instance=ExtResource( 9 )]
+[node name="wall_straight_2x4" parent="." index="9" instance=ExtResource( 16 )]
 
 position = Vector2( 895.933, -184.484 )
 rotation = 1.57079
 
-[node name="wall_corner2" parent="." index="10" instance=ExtResource( 10 )]
+[node name="wall_corner2" parent="." index="10" instance=ExtResource( 17 )]
 
 position = Vector2( 799.422, -160.422 )
 rotation = 3.14159
@@ -246,55 +458,176 @@ rotation = 3.14159
 [node name="front_desk" type="Sprite" parent="." index="11"]
 
 position = Vector2( 511, 179 )
-texture = ExtResource( 12 )
+texture = ExtResource( 20 )
 
-[node name="wall_corner3" parent="." index="12" instance=ExtResource( 10 )]
+[node name="chair_offwhite" parent="front_desk" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 1, -21 )
+
+[node name="phone" type="Sprite" parent="front_desk" index="1"]
+
+position = Vector2( -64.4266, 14.5482 )
+rotation = -2.35619
+texture = ExtResource( 21 )
+
+[node name="wall_corner3" parent="." index="12" instance=ExtResource( 17 )]
 
 position = Vector2( 991.715, -352.611 )
 rotation = -1.57079
 
-[node name="wall_straight_2x5" parent="." index="13" instance=ExtResource( 9 )]
+[node name="wall_straight_2x5" parent="." index="13" instance=ExtResource( 16 )]
 
 position = Vector2( 896.017, -375.941 )
 rotation = 1.57079
 
-[node name="wall_corner4" parent="." index="14" instance=ExtResource( 10 )]
+[node name="wall_corner4" parent="." index="14" instance=ExtResource( 17 )]
 
 position = Vector2( 799.709, -352.189 )
 rotation = -3.14159
 
-[node name="wall_corner5" parent="." index="15" instance=ExtResource( 10 )]
+[node name="wall_corner5" parent="." index="15" instance=ExtResource( 17 )]
 
 position = Vector2( 800.152, -208.508 )
 rotation = 1.57079
 
-[node name="wall_straight_2x6" parent="." index="16" instance=ExtResource( 9 )]
+[node name="wall_straight_2x6" parent="." index="16" instance=ExtResource( 16 )]
 
 position = Vector2( 1016, -448 )
 
-[node name="wall_straight_4x" parent="." index="17" instance=ExtResource( 11 )]
+[node name="wall_straight_4x" parent="." index="17" instance=ExtResource( 18 )]
 
-position = Vector2( 832.094, -567.927 )
+position = Vector2( 829.343, -567.948 )
 rotation = 1.57079
 
-[node name="wall_straight_4x2" parent="." index="18" instance=ExtResource( 11 )]
+[node name="Wall" parent="wall_straight_4x" index="2" instance=ExtResource( 14 )]
 
-position = Vector2( 576.87, -567.902 )
+position = Vector2( -0.377014, -127.836 )
+
+[node name="wall_straight_4x2" parent="." index="18" instance=ExtResource( 18 )]
+
+position = Vector2( 575.4, -567.902 )
 rotation = 1.57079
 
-[node name="wall_straight_4x3" parent="." index="19" instance=ExtResource( 11 )]
+[node name="wall_straight_4x3" parent="." index="19" instance=ExtResource( 18 )]
 
-position = Vector2( 320.789, -567.714 )
+position = Vector2( 320.249, -567.714 )
 rotation = 1.57079
 
-[node name="wall_corner6" parent="." index="20" instance=ExtResource( 10 )]
+[node name="wall_corner6" parent="." index="20" instance=ExtResource( 17 )]
 
 position = Vector2( 32.5242, -543.519 )
 rotation = -3.14159
 
-[node name="wall_straight_2x7" parent="." index="21" instance=ExtResource( 9 )]
+[node name="wall_straight_2x" parent="wall_corner6" index="2" instance=ExtResource( 16 )]
+
+position = Vector2( 24.3999, -94.519 )
+
+[node name="PottedPlant" parent="wall_corner6/wall_straight_2x" index="2" instance=ExtResource( 19 )]
+
+position = Vector2( -801.497, -421.874 )
+
+[node name="FilingCabinet_White" parent="wall_corner6/wall_straight_2x/PottedPlant" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( -170.389, -8.06521 )
+
+[node name="wall_straight_2x7" parent="." index="21" instance=ExtResource( 16 )]
 
 position = Vector2( 128.956, -567.413 )
+rotation = 1.57079
+
+[node name="wall_straight_2x8" parent="." index="22" instance=ExtResource( 16 )]
+
+position = Vector2( 8.01002, -256.949 )
+
+[node name="wall_corner7" parent="." index="23" instance=ExtResource( 17 )]
+
+position = Vector2( 224.145, -352.899 )
+rotation = -1.57079
+
+[node name="wall_corner8" parent="." index="24" instance=ExtResource( 17 )]
+
+position = Vector2( 224, -209 )
+
+[node name="filecabinet_white" type="Sprite" parent="." index="25"]
+
+position = Vector2( 848, -160 )
+texture = ExtResource( 22 )
+
+[node name="filecabinet_white" type="Sprite" parent="filecabinet_white" index="0"]
+
+position = Vector2( 31, 0 )
+texture = ExtResource( 22 )
+
+[node name="filecabinet_white2" type="Sprite" parent="filecabinet_white" index="1"]
+
+position = Vector2( 62, 0 )
+texture = ExtResource( 22 )
+
+[node name="filecabinet_white" type="Sprite" parent="filecabinet_white/filecabinet_white2" index="0"]
+
+position = Vector2( 30, 0 )
+texture = ExtResource( 22 )
+
+[node name="Desk_Full" parent="." index="26" instance=ExtResource( 11 )]
+
+position = Vector2( 894, -344 )
+
+[node name="filecabinet_black" type="Sprite" parent="Desk_Full" index="2"]
+
+position = Vector2( -84, -7 )
+texture = ExtResource( 23 )
+
+[node name="PottedPlant" parent="Desk_Full/filecabinet_black" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( -1, 133 )
+
+[node name="FilingCabinet_White" parent="Desk_Full/filecabinet_black/PottedPlant" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 173, -134 )
+
+[node name="FilingCabinet_White2" parent="Desk_Full/filecabinet_black/PottedPlant" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( 166.969, 7.45964 )
+rotation = 3.14159
+
+[node name="FilingCabinet_White" parent="Desk_Full/filecabinet_black/PottedPlant/FilingCabinet_White2" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 31.7578, -0.161301 )
+
+[node name="Desk_Empty" parent="." index="27" instance=ExtResource( 5 )]
+
+position = Vector2( 510, -408 )
+
+[node name="PottedPlant" parent="Desk_Empty" index="2" instance=ExtResource( 19 )]
+
+position = Vector2( -87, 0 )
+
+[node name="PottedPlant2" parent="Desk_Empty" index="3" instance=ExtResource( 19 )]
+
+position = Vector2( 87, 0 )
+
+[node name="monitor" type="Sprite" parent="Desk_Empty" index="4"]
+
+position = Vector2( -0.999989, -4 )
+scale = Vector2( 2, 1.5 )
+texture = ExtResource( 24 )
+
+[node name="FilingCabinet_Black" parent="." index="28" instance=ExtResource( 3 )]
+
+position = Vector2( 211, -352 )
+
+[node name="PottedPlant" parent="FilingCabinet_Black" index="2" instance=ExtResource( 19 )]
+
+position = Vector2( -171, 1 )
+
+[node name="Desk_Empty" parent="FilingCabinet_Black" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( -172.272, 102.415 )
+rotation = 1.57079
+
+[node name="chair_offwhite" parent="FilingCabinet_Black/Desk_Empty" index="2" instance=ExtResource( 10 )]
+
+position = Vector2( -51.7073, -88.76 )
 rotation = 1.57079
 
 
