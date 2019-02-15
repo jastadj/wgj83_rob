@@ -2,13 +2,17 @@ extends Node
 
 signal player_activate
 
-export(int) var level_time = 120
+export(int) var level_time = 444
 var level_failed = false
 var level_passed = false
 var next_level = null
 
 func _ready():
-	$Robot/UI/Timer.timer_in_seconds = level_time
+	set_level_time(level_time)
+	$Robot/UI/Panel/AnimationPlayer.play("fadein")
+	
+func set_level_time(target_time):
+	$Robot/UI/Timer.timer_in_seconds = target_time
 
 func player_activate():
 	# check all bombs to see which one the player is in and activate the bomb defusal ui
@@ -40,8 +44,11 @@ func _process(delta):
 	else:
 		$Robot/UI/TransmitterUI.signal_strength(0)
 		
+		# mission successful?
 		if get_armed_bomb_count() == 0:
 			$Robot/UI/Timer.freeze = true
+			# disable player movement
+			$Robot.disable_movement = true
 			if not level_passed:
 				success()
 	
@@ -56,11 +63,13 @@ func get_armed_bomb_count():
 			count += 1
 	return count
 
+func get_total_bomb_count():
+	return $Bombs.get_children().size()
+
 func success():
 	level_passed = true
 	
-	# disable player movement
-	$Robot.disable_movement = true
+	$Robot/UI/help_text.hide()
 	
 	# play fade animation
 	var timer1 = get_tree().create_timer(1)
@@ -91,6 +100,7 @@ func failed():
 	# play death animation
 	$Robot/UI/Panel/AnimationPlayer.play("white")
 	$Robot/UI/fail_label.show()
+	$Robot/UI/help_text.hide()
 	#yield($CanvasLayer/Panel/AnimationPlayer, "animation_finished")
 	$Robot/UI/FailSound.play()
 	yield($Robot/UI/FailSound, "finished")

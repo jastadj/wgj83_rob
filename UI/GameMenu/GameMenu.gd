@@ -10,11 +10,11 @@ func toggle():
 	else: open_menu()
 
 func open_menu():
-	get_tree().root.get_node("Game/UI/Timer").freeze = true
+	get_tree().root.get_node("Game/Robot/UI/Timer").freeze = true
 	show()
 	
 func close_menu():
-	get_tree().root.get_node("Game/UI/Timer").freeze = false
+	get_tree().root.get_node("Game/Robot/UI/Timer").freeze = false
 	hide()
 
 func do_continue():

@@ -9,7 +9,7 @@ var velocity = Vector2(0,0)
 var disable_movement = false
 signal player_activate
 var drive_sound_state = 0
-const DRIVE_VOLUME = -10
+const DRIVE_VOLUME = -15
 
 var sensor_range = 6
 

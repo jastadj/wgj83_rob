@@ -39,6 +39,7 @@ group = null
 text = "New Game"
 flat = false
 align = 1
+_sections_unfolded = [ "custom_styles" ]
 
 [node name="QuitButton" type="Button" parent="." index="1"]
 
